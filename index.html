@@ -18,11 +18,45 @@
     mapboxgl.accessToken = 'pk.eyJ1Ijoic3BpbmxvY2tjYSIsImEiOiJjbTFsZnN3eWswNHYzMmlwdjB1dHNldWZpIn0.-bZQK6dbXItXtxtlju6AWQ';
     const map = new mapboxgl.Map({
       container: 'map', // container ID
-      style: 'mapbox://styles/spinlockca/cm1lestl1072y01pqhb6ef833', // style URL
-      center: [-122.949, 49.248], // Center on Burnaby, BC (longitude, latitude)
-      zoom: 6.01, // Set starting zoom level
-      minZoom: 6.01 // Prevent zooming out past level 6
+      style: 'mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr/draft', // style URL
+      center: [-123.3656, 54.7267], // Center coordinates for BC (longitude, latitude)
+      zoom: 4.4, // Set initial zoom level to 4.4
+      minZoom: 2 // Prevent zooming out beyond level 2
+      // maxZoom: 16 // Uncomment to set max zoom level
     });
+
+    // Fetch the districts.json file containing district name to URL mapping
+    fetch('districts.json')
+      .then(response => response.json())
+      .then(districtMapping => {
+        // Wait for the map to load
+        map.on('load', function () {
+          // Add a click event listener to your existing electoral districts layer
+          map.on('click', 'electoral-districts-layer', function (e) {
+            // Get the clicked feature's properties
+            const districtName = e.features[0].properties.ED_NAME; // Adjust based on your layer's property field
+            
+            // Look up the URL from the JSON file using the district name
+            const url = districtMapping[districtName];
+            if (url) {
+              window.open(url, '_blank'); // Open the corresponding URL in a new tab
+            } else {
+              console.log(`No URL found for district: ${districtName}`);
+            }
+          });
+
+          // Change the cursor to a pointer when hovering over a district
+          map.on('mouseenter', 'electoral-districts-layer', function () {
+            map.getCanvas().style.cursor = 'pointer';
+          });
+
+          // Change the cursor back when not hovering
+          map.on('mouseleave', 'electoral-districts-layer', function () {
+            map.getCanvas().style.cursor = '';
+          });
+        });
+      })
+      .catch(error => console.error('Error loading district mapping:', error));
   </script>
 </body>
 </html>
