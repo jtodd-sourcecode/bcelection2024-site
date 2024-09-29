@@ -1,3 +1,4 @@
 *.geojson
 .DS_STORE
 venv/
+*.csv
