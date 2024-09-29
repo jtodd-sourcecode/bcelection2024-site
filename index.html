@@ -6,10 +6,7 @@
     <meta name="version" content="0.0.1" />
 
     <!-- SEO Meta Tags -->
-    <meta
-      name="description"
-      content="24bc.ca - Your 2024 BC Election. Visualized. Explore election coverage, news, and district information with an interactive map and curated links to key resources."
-    />
+    <meta name="description" content="24bc.ca - Your 2024 BC Election. Visualized. Explore an interactive map with curated links." />
     <meta name="keywords" content="BC Election, 2024, election coverage, electoral districts, British Columbia, politics, voting" />
 
     <!-- Open Graph Meta Tags for Social Sharing -->
@@ -176,7 +173,6 @@
         });
 
         popups = [newPopup];
-        console.log("After: " + popups);
       }
 
       Promise.all([fetch("districts.json"), fetch("markers.json")])
@@ -191,7 +187,7 @@
 
             if (district) {
               // Create and open the district popup
-              const districtPopup = new mapboxgl.Popup({closeOnMove: true})
+              const districtPopup = new mapboxgl.Popup({ closeOnMove: false })
                 .setLngLat(e.lngLat)
                 .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`)
                 .addTo(map);
@@ -211,7 +207,7 @@
             const markerInstance = new mapboxgl.Marker({ element: el })
               .setLngLat([marker.coordinates[1], marker.coordinates[0]])
               .setPopup(
-                new mapboxgl.Popup({closeOnMove: true})
+                new mapboxgl.Popup({ closeOnMove: false })
                   .setHTML(`<h3>${marker.title}</h3><p>${marker.summary}</p><a href="${marker.url}" target="_blank">Learn More</a>`)
                   .setMaxWidth("300px")
               )
@@ -239,6 +235,16 @@
         icon.style.color = "black"; // Ensure icons are black
         icon.style.fontSize = "3em"; // Increase the size 3 times
         icon.style.cursor = "pointer"; // Set cursor to pointer on hover
+
+        // Add hover effect
+        icon.addEventListener("mouseenter", () => {
+          icon.style.color = "#444"; // Change color on hover
+        });
+
+        icon.addEventListener("mouseleave", () => {
+          icon.style.color = "black"; // Revert to original color
+        });
+
         return icon;
       }
     </script>
