@@ -71,26 +71,21 @@
         z-index: 3; /* Ensure it floats above the map and other content */
         display: none; /* Hidden by default */
       }
-
       .dropdown ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-
       .dropdown ul li {
         margin-bottom: 10px;
       }
-
       .dropdown ul li a {
         text-decoration: none;
         color: #333;
       }
-
       .dropdown ul li a:hover {
         text-decoration: underline;
       }
-
       .dropdown.show {
         display: block; /* Show the dropdown when needed */
       }
@@ -120,164 +115,56 @@
     <script>
       mapboxgl.accessToken = "pk.eyJ1Ijoic3BpbmxvY2tjYSIsImEiOiJjbTFsZnN3eWswNHYzMmlwdjB1dHNldWZpIn0.-bZQK6dbXItXtxtlju6AWQ";
       const map = new mapboxgl.Map({
-        container: "map", // container ID
-        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr", // style URL
-        center: [-123.3656, 54.7267], // Center coordinates for BC (longitude, latitude)
-        zoom: 4.4, // Set initial zoom level to 4.4
-        minZoom: 4, // Prevent zooming out beyond level 2
+        container: "map",
+        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr",
+        center: [-123.3656, 54.7267],
+        zoom: 4.4,
+        minZoom: 4,
       });
 
-      // Add zoom controls without the compass (North button)
-      map.addControl(
-        new mapboxgl.NavigationControl({
-          showCompass: false,
+      map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+
+      // Load external district data
+      fetch("districts.json")
+        .then((response) => response.json())
+        .then((districtMapping) => {
+          map.on("click", "electoral-districts-layer", function (e) {
+            const districtName = e.features[0].properties.ED_NAME;
+            const district = districtMapping[districtName];
+
+            if (district) {
+              new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`)
+                .addTo(map);
+            } else {
+              console.log(`No information found for district: ${districtName}`);
+            }
+          });
+
+          map.on("mouseenter", "electoral-districts-layer", function () {
+            map.getCanvas().style.cursor = "pointer";
+          });
+
+          map.on("mouseleave", "electoral-districts-layer", function () {
+            map.getCanvas().style.cursor = "";
+          });
         })
-      );
-
-      // Wait for the map to load
-      map.on("load", function () {
-        // Get the embedded JSON data from the script tag
-        const districtMapping = JSON.parse(document.getElementById("district-data").textContent);
-
-        // Add a click event listener to your existing electoral districts layer
-        map.on("click", "electoral-districts-layer", function (e) {
-          const districtName = e.features[0].properties.ED_NAME; // Adjust based on your layer's property field
-          const url = districtMapping[districtName];
-
-          if (url) {
-            // Show a popup instead of immediately opening a new tab
-            new mapboxgl.Popup()
-              .setLngLat(e.lngLat)
-              .setHTML(`<h3>${districtName}</h3><a href="${url}" target="_blank">Learn More</a>`)
-              .addTo(map);
-          } else {
-            console.log(`No URL found for district: ${districtName}`);
-          }
-        });
-
-        // Change the cursor to a pointer when hovering over a district
-        map.on("mouseenter", "electoral-districts-layer", function () {
-          map.getCanvas().style.cursor = "pointer";
-        });
-
-        // Change the cursor back when not hovering
-        map.on("mouseleave", "electoral-districts-layer", function () {
-          map.getCanvas().style.cursor = "";
-        });
-      });
+        .catch((error) => console.error("Error loading district data:", error));
 
       const header = document.getElementById("header");
-  const dropdown = document.getElementById("dropdown");
+      const dropdown = document.getElementById("dropdown");
 
-  header.addEventListener("click", function () {
-    dropdown.classList.toggle("show"); // Toggle the show class to display/hide the dropdown
-  });
+      header.addEventListener("click", function () {
+        dropdown.classList.toggle("show"); // Toggle the show class to display/hide the dropdown
+      });
 
-  // Optional: Close the drop-down when clicking outside of it
-  document.addEventListener("click", function (event) {
-    if (!header.contains(event.target) && !dropdown.contains(event.target)) {
-      dropdown.classList.remove("show");
-    }
-  });
-    </script>
-
-    <!-- JSON data embedded at the bottom for better code organization -->
-    <script type="application/json" id="district-data">
-      {
-        "Abbotsford-Mission": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Abbotsford South": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Abbotsford West": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Boundary-Similkameen": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Bulkley Valley-Stikine": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Burnaby Centre": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Burnaby East": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Burnaby-New Westminster": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Burnaby North": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Burnaby South-Metrotown": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Cariboo-Chilcotin": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Hastings": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Kensington": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Langara": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Little Mountain": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Point Grey": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Quilchena": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Renfrew": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-South Granville": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Strathcona": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-West End": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Yaletown": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vernon-Lumby": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Victoria-Beacon Hill": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Victoria-Swan Lake": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "West Kelowna-Peachland": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "West Vancouver-Capilano": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "West Vancouver-Sea to Sky": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Chilliwack-Cultus Lake": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Chilliwack North": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Columbia River-Revelstoke": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Coquitlam-Burke Mountain": "https://www.perplexity.ai/page/coquitlam-burke-mountain-candi-OmnwXVipTQ6rZBuu5BOu7Q",
-        "Coquitlam-Maillardville": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Courtenay-Comox": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Cowichan Valley": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Delta North": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Delta South": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Esquimalt-Colwood": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Fraser-Nicola": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Juan de Fuca-Malahat": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kamloops Centre": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kamloops-North Thompson": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kelowna Centre": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kelowna-Lake Country-Coldstream": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kelowna-Mission": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kootenay Central": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kootenay-Monashee": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Kootenay-Rockies": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Ladysmith-Oceanside": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Langford-Highlands": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Langley-Abbotsford": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Langley-Walnut Grove": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Langley-Willowbrook": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Maple Ridge East": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Maple Ridge-Pitt Meadows": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Mid Island-Pacific Rim": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Nanaimo-Gabriola Island": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Nanaimo-Lantzville": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Nechako Lakes": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "New Westminster-Coquitlam": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "North Coast-Haida Gwaii": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "North Island": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "North Vancouver-Lonsdale": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "North Vancouver-Seymour": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Oak Bay-Gordon Head": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Peace River North": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Peace River South": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Penticton-Summerland": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Port Coquitlam": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Port Moody-Burquitlam": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Powell River-Sunshine Coast": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Prince George-Mackenzie": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Prince George-North Cariboo": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Prince George-Valemount": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Richmond-Bridgeport": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Richmond Centre": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Richmond-Queensborough": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Richmond-Steveston": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Saanich North and the Islands": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Saanich South": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Salmon Arm-Shuswap": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Skeena": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey City Centre": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-Cloverdale": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-Fleetwood": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-Guildford": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-Newton": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey North": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-Panorama": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-Serpentine River": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey South": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Surrey-White Rock": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w",
-        "Vancouver-Fraserview": "https://www.perplexity.ai/page/bc-election-2024-g4_sHS8yRAuTCDYiiTwt1w"
-      }
+      // Optional: Close the drop-down when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (!header.contains(event.target) && !dropdown.contains(event.target)) {
+          dropdown.classList.remove("show");
+        }
+      });
     </script>
   </body>
 </html>
