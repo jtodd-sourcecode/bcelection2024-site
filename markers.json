@@ -1,0 +1,16 @@
+[
+    {
+      "coordinates": [  -123.1347, 49.2706],
+      "title": "Granville Island",
+      "summary": "A popular tourist attraction in Vancouver.",
+      "icon": "fa-map-marker-alt",
+      "url": "https://example.com/granville-island"
+    },
+    {
+      "coordinates": [-123.1187, 49.2827 ],
+      "title": "Vancouver Art Gallery",
+      "summary": "A premier art museum showcasing local and international artists.",
+      "icon": "fa-palette",
+      "url": "https://example.com/vancouver-art-gallery"
+    }
+  ]

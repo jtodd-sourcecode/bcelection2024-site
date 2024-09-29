@@ -4,33 +4,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="version" content="0.0.1" />
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="2024 BC Election: Explore election coverage, news, and district information with an interactive map and curated links to key resources." />
+    <meta
+      name="description"
+      content="24bc.ca - Your 2024 BC Election. Visualized. Explore election coverage, news, and district information with an interactive map and curated links to key resources."
+    />
     <meta name="keywords" content="BC Election, 2024, election coverage, electoral districts, British Columbia, politics, voting" />
 
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="BC Election 2024 - Interactive Map and Election Coverage" />
-    <meta property="og:description" content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources." />
+    <meta property="og:title" content="24bc.ca - Your 2024 BC Election. Visualized. Interactive Map and Election Coverage" />
+    <meta
+      property="og:description"
+      content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources."
+    />
     <meta property="og:image" content="https://24bc.ca/og-image.jpg" />
     <meta property="og:url" content="https://24bc.ca" />
     <meta property="og:type" content="website" />
-  
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BC Election 2024 - Interactive Map and Election Coverage" />
-    <meta name="twitter:description" content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources." />
+    <meta name="twitter:title" content="24bc.ca - Your 2024 BC Election. Visualized." />
+    <meta
+      name="twitter:description"
+      content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources."
+    />
     <meta name="twitter:image" content="https://24bc.ca/twitter-image.jpg" />
-  
+
     <title>24bc.ca - Your 2024 BC Election. Visualized.</title>
-    
+
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    
+
     <style>
       .hidden {
         display: none;
@@ -132,45 +141,6 @@
     <div id="map"></div>
 
     <script>
-      mapboxgl.accessToken = "pk.eyJ1Ijoic3BpbmxvY2tjYSIsImEiOiJjbTFsZnN3eWswNHYzMmlwdjB1dHNldWZpIn0.-bZQK6dbXItXtxtlju6AWQ";
-      const map = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr",
-        center: [-123.3656, 54.7267],
-        zoom: 4.4,
-        minZoom: 4,
-      });
-
-      map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
-
-      // Load external district data
-      fetch("districts.json")
-        .then((response) => response.json())
-        .then((districtMapping) => {
-          map.on("click", "electoral-districts-layer", function (e) {
-            const districtName = e.features[0].properties.ED_NAME;
-            const district = districtMapping[districtName];
-
-            if (district) {
-              new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`)
-                .addTo(map);
-            } else {
-              console.log(`No information found for district: ${districtName}`);
-            }
-          });
-
-          map.on("mouseenter", "electoral-districts-layer", function () {
-            map.getCanvas().style.cursor = "pointer";
-          });
-
-          map.on("mouseleave", "electoral-districts-layer", function () {
-            map.getCanvas().style.cursor = "";
-          });
-        })
-        .catch((error) => console.error("Error loading district data:", error));
-
       const header = document.getElementById("header");
       const dropdown = document.getElementById("dropdown");
 
@@ -184,6 +154,74 @@
           dropdown.classList.remove("show");
         }
       });
+
+      mapboxgl.accessToken = "pk.eyJ1Ijoic3BpbmxvY2tjYSIsImEiOiJjbTFsZnN3eWswNHYzMmlwdjB1dHNldWZpIn0.-bZQK6dbXItXtxtlju6AWQ";
+      const map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr",
+        center: [-123.3656, 54.7267],
+        zoom: 4.4,
+        minZoom: 4,
+      });
+
+      map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+
+      // Load both districts.json and markers.json
+      Promise.all([fetch('districts.json'), fetch('markers.json')])
+        .then(async ([districtsRes, markersRes]) => {
+          const districts = await districtsRes.json();
+          const markers = await markersRes.json();
+
+          // Handle district layer interaction
+          map.on("click", "electoral-districts-layer", function (e) {
+            const districtName = e.features[0].properties.ED_NAME;
+            const district = districts[districtName];
+
+            if (district) {
+              new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(
+                  `<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`
+                )
+                .addTo(map);
+            } else {
+              console.log(`No information found for district: ${districtName}`);
+            }
+          });
+
+          map.on("mouseenter", "electoral-districts-layer", function () {
+            map.getCanvas().style.cursor = "pointer";
+          });
+
+          map.on("mouseleave", "electoral-districts-layer", function () {
+            map.getCanvas().style.cursor = "";
+          });
+
+          // Add markers from markers.json
+          markers.forEach((marker) => {
+            new mapboxgl.Marker({
+              element: createIconElement(marker.icon),
+            })
+              .setLngLat(marker.coordinates)
+              .setPopup(
+                new mapboxgl.Popup().setHTML(
+                  `<h3>${marker.title}</h3><p>${marker.summary}</p><a href="${marker.url}" target="_blank">Learn More</a>`
+                )
+              )
+              .addTo(map);
+          });
+        })
+        .catch((error) => console.error("Error loading data:", error));
+
+        function createIconElement(iconClass) {
+    const icon = document.createElement("i");
+    icon.className = `fas ${iconClass}`;
+    icon.style.color = "black"; // Ensure icons are black
+    icon.style.fontSize = "3em"; // Increase the size 3 times
+    icon.style.zIndex = "999";   // Ensure the marker is always on top
+    icon.style.cursor = "pointer"; // Set cursor to pointer on hover
+    return icon;
+  }
     </script>
   </body>
 </html>
