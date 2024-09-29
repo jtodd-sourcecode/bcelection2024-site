@@ -165,89 +165,82 @@
       });
 
       map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
-// Track all open popups
-let popups = [];
 
-Promise.all([fetch("districts.json"), fetch("markers.json")])
-  .then(async ([districtsRes, markersRes]) => {
-    const districts = await districtsRes.json();
-    const markers = await markersRes.json();
+      // Track all open popups
+      let popups = [];
 
-    // Handle district layer interaction
-    map.on("click", "electoral-districts-layer", function (e) {
-      const districtName = e.features[0].properties.ED_NAME;
-      const district = districts[districtName];
+      // Helper function to clear all popups. Call before adding to new popup to the map!
+      function trackPopup(newPopup) {
+        popups.forEach((popup) => {
+          popup.remove();
+        });
 
-      if (district) {
-        // Clear all existing popups
-        popups.forEach((popup) => popup.remove());
-        popups = []; // Reset the array
-
-        // Create and open the district popup
-        const districtPopup = new mapboxgl.Popup()
-          .setLngLat(e.lngLat)
-          .setHTML(
-            `<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`
-          )
-          .addTo(map);
-
-        // Track the newly opened district popup
-        popups.push(districtPopup);
-      } else {
-        console.log(`No information found for district: ${districtName}`);
+        popups = [newPopup];
+        console.log("After: " + popups);
       }
-    });
 
-    map.on("mouseenter", "electoral-districts-layer", function () {
-      map.getCanvas().style.cursor = "pointer";
-    });
+      Promise.all([fetch("districts.json"), fetch("markers.json")])
+        .then(async ([districtsRes, markersRes]) => {
+          const districts = await districtsRes.json();
+          const markers = await markersRes.json();
 
-    map.on("mouseleave", "electoral-districts-layer", function () {
-      map.getCanvas().style.cursor = "";
-    });
+          // Handle district layer interaction
+          map.on("click", "electoral-districts-layer", function (e) {
+            const districtName = e.features[0].properties.ED_NAME;
+            const district = districts[districtName];
 
-    // Add markers from markers.json
-    markers.forEach((marker) => {
-      const el = createIconElement(marker.icon);
+            if (district) {
+              // Create and open the district popup
+              const districtPopup = new mapboxgl.Popup({closeOnMove: true})
+                .setLngLat(e.lngLat)
+                .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`)
+                .addTo(map);
 
-      // Create a marker and add it to the map
-      const markerInstance = new mapboxgl.Marker({ element: el })
-        .setLngLat(marker.coordinates)
-        .setPopup(
-          new mapboxgl.Popup().setHTML(
-            `<h3>${marker.title}</h3><p>${marker.summary}</p><a href="${marker.url}" target="_blank">Learn More</a>`
-          )
-        )
-        .addTo(map);
+              // Track the newly opened district popup
+              trackPopup(districtPopup);
+            } else {
+              console.log(`No information found for district: ${districtName}`);
+            }
+          });
 
-      // Add event listener to stop propagation to the map's layers
-      el.addEventListener("mousedown", function (e) {
-        e.stopPropagation(); // Stops propagation for click event
-      });
+          // Add markers from markers.json
+          markers.forEach((marker) => {
+            const el = createIconElement(marker.icon);
 
-      // Add event listener to display the marker popup
-      el.addEventListener("click", function () {
-        // Clear all existing popups
-        popups.forEach((popup) => popup.remove());
-        popups = []; // Reset the array
+            // Create a marker and add it to the map
+            const markerInstance = new mapboxgl.Marker({ element: el })
+              .setLngLat([marker.coordinates[1], marker.coordinates[0]])
+              .setPopup(
+                new mapboxgl.Popup({closeOnMove: true})
+                  .setHTML(`<h3>${marker.title}</h3><p>${marker.summary}</p><a href="${marker.url}" target="_blank">Learn More</a>`)
+                  .setMaxWidth("300px")
+              )
+              .addTo(map);
 
-        // Open the new popup
-        const popup = markerInstance.getPopup();
-        popup.addTo(map);
-        popups.push(popup); // Track the newly opened popup
-      });
-    });
-  })
-  .catch((error) => console.error("Error loading data:", error));
+            // Prevent click event from propagating to the map's layers
+            el.addEventListener("click", (e) => {
+              e.stopPropagation();
+            });
 
-function createIconElement(iconClass) {
-  const icon = document.createElement("i");
-  icon.className = `fas ${iconClass}`;
-  icon.style.color = "black"; // Ensure icons are black
-  icon.style.fontSize = "3em"; // Increase the size 3 times
-  icon.style.cursor = "pointer"; // Set cursor to pointer on hover
-  return icon;
-}
+            // Add event listener to display the marker popup
+            el.addEventListener("click", function () {
+              // Open the new popup
+              const popup = markerInstance.getPopup();
+              trackPopup(popup); // Track the newly opened popup
+              popup.addTo(map);
+            });
+          });
+        })
+        .catch((error) => console.error("Error loading data:", error));
+
+      function createIconElement(iconClass) {
+        const icon = document.createElement("i");
+        icon.className = `fas ${iconClass}`;
+        icon.style.color = "black"; // Ensure icons are black
+        icon.style.fontSize = "3em"; // Increase the size 3 times
+        icon.style.cursor = "pointer"; // Set cursor to pointer on hover
+        return icon;
+      }
     </script>
   </body>
 </html>
