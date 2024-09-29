@@ -1,10 +1,1 @@
-[
-    {
-      "address": "3390-3400 David Avenue, Coquitlam, BC",
-      "coordinates": [49.2930502,-122.7261161],
-      "title": "Burke Mountain Middle/Secondary School",
-      "summary": "The Burke Mountain Middle/Secondary School is a new combined middle and secondary school under construction in northeast Coquitlam, British Columbia. The project includes a 1,000-seat school for students in Grades 6-12, a neighborhood learning centre, and a 3.6-hectare community park. The school is funded by $135 million from the provincial government and $25 million from the Coquitlam School District. Construction began in 2024, with an expected completion date of September 2026.",
-      "icon": "fa-graduation-cap",
-      "url": "https://www.sd43.bc.ca/CapitalProjects/Pages/BurkeMountain.aspx"
-    }
-]
+[{"address":"3390-3400 David Avenue, Coquitlam, BC","coordinates":[49.2930502,-122.7261161],"title":"Burke Mountain Middle/Secondary School","summary":"The Burke Mountain Middle/Secondary School is a new combined middle and secondary school under construction in northeast Coquitlam, British Columbia. The project includes a 1,000-seat school for students in Grades 6-12, a neighborhood learning centre, and a 3.6-hectare community park. The school is funded by $135 million from the provincial government and $25 million from the Coquitlam School District. Construction began in 2024, with an expected completion date of September 2026.","icon":"fa-graduation-cap","url":"https://www.sd43.bc.ca/CapitalProjects/Pages/BurkeMountain.aspx"}]
