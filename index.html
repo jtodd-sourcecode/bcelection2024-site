@@ -205,7 +205,7 @@
               const districtPopup = new mapboxgl.Popup({ closeOnMove: false })
                 .setMaxWidth("340px")
                 .setLngLat(e.lngLat)
-                .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Electoral District Information</a>`)
+                .setHTML(`<h3><a href="${district.url}" target="_blank">${district.title}</a></h3>${district.summary}`)
                 .addTo(map);
 
               // Track the newly opened district popup
