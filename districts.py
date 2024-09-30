@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import os
 import re
 
 def clean_whitespace(value):
@@ -25,4 +26,5 @@ json_file_path = 'districts.json'  # Replace with desired output JSON file path
 with open(json_file_path, 'w') as json_file:
     json_file.write(json_data)
 
-print(f"CSV has been converted back to JSON with cleaned whitespace and saved as '{json_file_path}'.")
+file_size = os.path.getsize(json_file_path) / 1024 # Get size in bytes
+print(f"{json_file_path} created! Size: {file_size:.2f} KB")
