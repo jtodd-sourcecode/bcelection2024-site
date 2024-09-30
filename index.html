@@ -36,6 +36,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
       .hidden {
@@ -56,6 +57,8 @@
         z-index: 2;
       }
       #header h1 {
+        font-family: "Lato", sans-serif;
+        font-weight: 700; /* Use bold weight for headers */
         margin: 0; /* Remove default margin */
         cursor: pointer;
       }
@@ -63,7 +66,7 @@
         /* margin-left: 5px; */
         cursor: pointer;
         vertical-align: middle;
-        font-size: 0.8em;
+        font-size: 0.6em;
       }
 
       #map {
@@ -90,7 +93,7 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         width: 350px;
         position: fixed; /* Fixed positioning to float it above everything */
-        top: 50px; /* Adjust as necessary based on header height */
+        top: 49px; /* Adjust as necessary based on header height */
         left: 50%;
         transform: translateX(-50%);
         z-index: 3; /* Ensure it floats above the map and other content */
@@ -118,7 +121,7 @@
   </head>
   <body>
     <div id="header">
-      <h1>2024 BC Election <i class="fas fa-info-circle info-icon" id="info-icon"></i></h1>
+      <h1>2024 BC Election. Visualized. <i class="fas fa-info-circle info-icon" id="info-icon"></i></h1>
     </div>
 
     <!-- Drop-down container for curated links -->
@@ -155,23 +158,23 @@
       mapboxgl.accessToken = "pk.eyJ1Ijoic3BpbmxvY2tjYSIsImEiOiJjbTFsZnN3eWswNHYzMmlwdjB1dHNldWZpIn0.-bZQK6dbXItXtxtlju6AWQ";
       const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr",
+        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr/draft",
         center: [-123.3656, 54.7267],
         zoom: 4.4,
         minZoom: 4,
+        bearing: 0, // Force the bearing to 0 (north)
+        dragRotate: false, // Disable map rotation by dragging
       });
 
       map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
       // Track all open popups
-      let popups = [];
-
       // Helper function to clear all popups. Call before adding to new popup to the map!
+      let popups = [];
       function trackPopup(newPopup) {
         popups.forEach((popup) => {
           popup.remove();
         });
-
         popups = [newPopup];
       }
 
@@ -180,7 +183,10 @@
           const districts = await districtsRes.json();
           const markers = await markersRes.json();
 
-          // Handle district layer interaction
+          //
+          // Electoral Districts Layer
+          //
+
           map.on("click", "electoral-districts-layer", function (e) {
             const districtName = e.features[0].properties.ED_NAME;
             const district = districts[districtName];
@@ -199,7 +205,48 @@
             }
           });
 
-          // Add markers from markers.json
+          //
+          // Fires layer
+          //
+
+          map.on("click", "fires-layer", function (e) {
+            const fireProperties = e.features[0].properties;
+            const fireID = fireProperties.FIRE_NUMBER;
+            const fireYear = fireProperties.FIRE_YEAR;
+            const fireCause = fireProperties.FIRE_CAUSE;
+            const fireSize = fireProperties.FIRE_SIZE_HECTARES;
+
+            fireHtml = `<h3>${fireYear} ${fireCause}-Caused Fire</h3>`;
+            fireHtml += `<p><strong>ID:</strong> ${fireID}<br/>`;
+            fireHtml += `<strong>Size:</strong> ${fireSize.toFixed()} hectares</p>`;
+
+            // Metro vancover fires aren't available on this site
+            fireHtml += `<a href="https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2023&incidentNumber=${fireID}" target="_blank">Learn More</a>`;
+
+            // Create and display the popup with fire information
+            const firePopup = new mapboxgl.Popup({ closeOnMove: false })
+              .setLngLat(e.lngLat)
+              .setHTML(fireHtml)
+              .addTo(map);
+
+            // Clear previous popups (optional)
+            trackPopup(firePopup);
+          });
+
+          // Change the cursor to a pointer when the mouse is over the wildfire layer
+          map.on("mouseenter", "fires-layer", function () {
+            map.getCanvas().style.cursor = "pointer";
+          });
+
+          // Reset the cursor when it leaves the wildfire layer
+          map.on("mouseleave", "fires-layer", function () {
+            map.getCanvas().style.cursor = "";
+          });
+
+          //
+          // Markers
+          //
+
           markers.forEach((marker) => {
             const el = createIconElement(marker.icon);
 
@@ -233,7 +280,7 @@
         const icon = document.createElement("i");
         icon.className = `fas ${iconClass}`;
         icon.style.color = "black"; // Ensure icons are black
-        icon.style.fontSize = "2.5em"; // Increase the size 3 times
+        icon.style.fontSize = "2.5em"; // Increase the size
         icon.style.cursor = "pointer"; // Set cursor to pointer on hover
 
         // Add hover effect
