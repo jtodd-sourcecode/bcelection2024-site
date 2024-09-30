@@ -11,10 +11,7 @@
 
     <!-- Open Graph Meta Tags for Social Sharing -->
     <meta property="og:title" content="24bc.ca - Your 2024 BC Election. Visualized. Interactive Map and Election Coverage" />
-    <meta
-      property="og:description"
-      content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources."
-    />
+    <meta property="og:description" content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources." />
     <meta property="og:image" content="https://24bc.ca/og-image.jpg" />
     <meta property="og:url" content="https://24bc.ca" />
     <meta property="og:type" content="website" />
@@ -22,10 +19,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="24bc.ca - Your 2024 BC Election. Visualized." />
-    <meta
-      name="twitter:description"
-      content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources."
-    />
+    <meta name="twitter:description" content="Stay updated on the 2024 BC Election with interactive electoral district maps and curated links to election news and resources." />
     <meta name="twitter:image" content="https://24bc.ca/twitter-image.jpg" />
 
     <title>24bc.ca - Your 2024 BC Election. Visualized.</title>
@@ -81,6 +75,9 @@
       .mapboxgl-popup-content {
         max-height: 300px; /* Adjust this value as needed */
         overflow-y: auto; /* Enable vertical scroll if content is too long */
+
+        border: 4px solid #edf1f5;
+        border-radius: 3px;
       }
       .mapboxgl-popup-content h3 {
         margin: 0;
@@ -97,7 +94,7 @@
         background-color: white;
         border: 1px solid #ccc;
         padding: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
         width: 350px;
         position: fixed; /* Fixed positioning to float it above everything */
         top: 31px; /* Adjust as necessary based on header height */
@@ -124,6 +121,11 @@
       .dropdown.show {
         display: block; /* Show the dropdown when needed */
       }
+      .dropdown-item i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -134,16 +136,37 @@
     <!-- Drop-down container for curated links -->
     <div id="dropdown" class="dropdown hidden">
       <ul>
-        <li><a href="https://www.instagram.com/24bc.ca/" target="_blank">Corrections and Changes? DM me</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/2024_British_Columbia_general_election" target="_blank">2024 BC General Election Wikipedia Page</a></li>
-        <li><a href="https://www.youtube.com/watch?v=_SVdQgax0Fg" target="_blank">BC Election: Week 1 (YouTube)</a></li>
-        <li><a href="https://elections.bc.ca/" target="_blank">Elections BC - Official Information</a></li>
-        <li><a href="https://www.cbc.ca/news/canada/british-columbia" target="_blank">CBC News - BC Election Coverage</a></li>
-        <li><a href="https://bc.ctvnews.ca/" target="_blank">CTV News Vancouver - Election Coverage</a></li>
-        <li><a href="https://thenarwhal.ca/topics/bc-election/" target="_blank">The Narwhal - BC Election 2024</a></li>
-        <li><a href="https://thetyee.ca/" target="_blank">The Tyee - In-depth Election Coverage</a></li>
-        <li><a href="https://cityhallwatch.wordpress.com/" target="_blank">CityHallWatch - Civic Affairs Blog</a></li>
-        <li><a href="https://contributions.electionsbc.gov.bc.ca/pcs/SA1Search.aspx" target="_blank">Donations to Political Parties</a></li>
+        <li>
+          <a href="https://www.instagram.com/24bc.ca/" target="_blank"><i class="fa fa-envelope fa-fw"></i>DM me for corrections and updates</a>
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/2024_British_Columbia_general_election" target="_blank"
+            ><i class="fab fa-wikipedia-w fa-fw"></i>2024 BC General Election</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=_SVdQgax0Fg" target="_blank"><i class="fab fa-youtube fa-fw"></i>BC Election: Week 1 (YouTube)</a>
+        </li>
+        <li>
+          <a href="https://elections.bc.ca/" target="_blank"><i class="fas fa-vote-yea fa-fw"></i>Elections BC - Official Information</a>
+        </li>
+        <li>
+          <a href="https://contributions.electionsbc.gov.bc.ca/pcs/SA1Search.aspx" target="_blank"><i class="fas fa-vote-yea fa-fw"></i>Donations to Political Parties</a>
+        </li>
+        <li>
+          <a href="https://www.cbc.ca/news/canada/british-columbia" target="_blank"><i class="fas fa-newspaper fa-fw"></i>CBC News - BC Election Coverage</a>
+        </li>
+        <li>
+          <a href="https://bc.ctvnews.ca/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>CTV News Vancouver - Election Coverage</a>
+        </li>
+        <li>
+          <a href="https://thenarwhal.ca/topics/bc-election/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>The Narwhal - BC Election 2024</a>
+        </li>
+        <li>
+          <a href="https://thetyee.ca/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>The Tyee - In-depth Election Coverage</a>
+        </li>
+        <li>
+          <a href="https://cityhallwatch.wordpress.com/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>CityHallWatch - Civic Affairs Blog</a>
+        </li>
       </ul>
     </div>
 
@@ -226,12 +249,9 @@
             const fireCause = fireProperties.FIRE_CAUSE;
             const fireSize = fireProperties.FIRE_SIZE_HECTARES;
 
-            fireHtml = `<h3>${fireYear} ${fireCause}-Caused Fire</h3>`;
+            fireHtml = `<h3><a href="https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2023&incidentNumber=${fireID}" target="_blank">${fireYear} ${fireCause}-Caused Fire</a></h3>`;
             fireHtml += `<p><strong>ID:</strong> ${fireID}<br/>`;
             fireHtml += `<strong>Size:</strong> ${fireSize.toFixed()} hectares</p>`;
-
-            // Metro vancover fires aren't available on this site
-            fireHtml += `<a href="https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2023&incidentNumber=${fireID}" target="_blank">Learn More</a>`;
 
             // Create and display the popup with fire information
             const firePopup = new mapboxgl.Popup({ closeOnMove: false }).setLngLat(e.lngLat).setHTML(fireHtml).addTo(map);
