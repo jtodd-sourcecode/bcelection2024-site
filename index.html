@@ -58,6 +58,7 @@
       }
       #header h1 {
         font-family: "Lato", sans-serif;
+        font-size: 1.1rem;
         font-weight: 700; /* Use bold weight for headers */
         margin: 0; /* Remove default margin */
         cursor: pointer;
@@ -71,9 +72,15 @@
 
       #map {
         position: absolute;
-        top: 50px;
+        top: 30px;
         bottom: 0;
         width: 100%;
+      }
+
+      /* Add scroll bar for overflow content */
+      .mapboxgl-popup-content {
+        max-height: 300px; /* Adjust this value as needed */
+        overflow-y: auto; /* Enable vertical scroll if content is too long */
       }
       .mapboxgl-popup-content h3 {
         margin: 0;
@@ -93,7 +100,7 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         width: 350px;
         position: fixed; /* Fixed positioning to float it above everything */
-        top: 49px; /* Adjust as necessary based on header height */
+        top: 31px; /* Adjust as necessary based on header height */
         left: 50%;
         transform: translateX(-50%);
         z-index: 3; /* Ensure it floats above the map and other content */
@@ -127,6 +134,8 @@
     <!-- Drop-down container for curated links -->
     <div id="dropdown" class="dropdown hidden">
       <ul>
+        <li><a href="https://www.instagram.com/24bc.ca/" target="_blank">Corrections and Changes? DM me</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/2024_British_Columbia_general_election" target="_blank">2024 BC General Election Wikipedia Page</a></li>
         <li><a href="https://www.youtube.com/watch?v=_SVdQgax0Fg" target="_blank">BC Election: Week 1 (YouTube)</a></li>
         <li><a href="https://elections.bc.ca/" target="_blank">Elections BC - Official Information</a></li>
         <li><a href="https://www.cbc.ca/news/canada/british-columbia" target="_blank">CBC News - BC Election Coverage</a></li>
@@ -158,7 +167,7 @@
       mapboxgl.accessToken = "pk.eyJ1Ijoic3BpbmxvY2tjYSIsImEiOiJjbTFsZnN3eWswNHYzMmlwdjB1dHNldWZpIn0.-bZQK6dbXItXtxtlju6AWQ";
       const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr/draft",
+        style: "mapbox://styles/spinlockca/cm1loozs0001b01rkbnc74vtr",
         center: [-123.3656, 54.7267],
         zoom: 4.4,
         minZoom: 4,
@@ -194,8 +203,9 @@
             if (district) {
               // Create and open the district popup
               const districtPopup = new mapboxgl.Popup({ closeOnMove: false })
+                .setMaxWidth("340px")
                 .setLngLat(e.lngLat)
-                .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Learn More</a>`)
+                .setHTML(`<h3>${district.title}</h3><p>${district.summary}</p><a href="${district.url}" target="_blank">Electoral District Information</a>`)
                 .addTo(map);
 
               // Track the newly opened district popup
@@ -224,10 +234,7 @@
             fireHtml += `<a href="https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2023&incidentNumber=${fireID}" target="_blank">Learn More</a>`;
 
             // Create and display the popup with fire information
-            const firePopup = new mapboxgl.Popup({ closeOnMove: false })
-              .setLngLat(e.lngLat)
-              .setHTML(fireHtml)
-              .addTo(map);
+            const firePopup = new mapboxgl.Popup({ closeOnMove: false }).setLngLat(e.lngLat).setHTML(fireHtml).addTo(map);
 
             // Clear previous popups (optional)
             trackPopup(firePopup);
@@ -255,8 +262,8 @@
               .setLngLat([marker.coordinates[1], marker.coordinates[0]])
               .setPopup(
                 new mapboxgl.Popup({ closeOnMove: false })
+                  .setMaxWidth("340px")
                   .setHTML(`<h3>${marker.title}</h3><p>${marker.summary}</p><a href="${marker.url}" target="_blank">Learn More</a>`)
-                  .setMaxWidth("300px")
               )
               .addTo(map);
 

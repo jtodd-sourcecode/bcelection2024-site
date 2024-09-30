@@ -1,467 +1,467 @@
 {
-    "Abbotsford-Mission": {
-      "url": "https://en.wikipedia.org/wiki/Abbotsford-Mission",
-      "title": "Abbotsford-Mission",
-      "summary": "Summary for Abbotsford-Mission."
-    },
     "Abbotsford South": {
-      "url": "https://en.wikipedia.org/wiki/Abbotsford_South",
-      "title": "Abbotsford South",
-      "summary": "Summary for Abbotsford South."
+        "url": "https://en.wikipedia.org/wiki/Abbotsford_South",
+        "title": "Abbotsford South",
+        "summary": "Summary for Abbotsford South."
     },
     "Abbotsford West": {
-      "url": "https://en.wikipedia.org/wiki/Abbotsford_West",
-      "title": "Abbotsford West",
-      "summary": "Summary for Abbotsford West."
+        "url": "https://en.wikipedia.org/wiki/Abbotsford_West",
+        "title": "Abbotsford West",
+        "summary": "Summary for Abbotsford West."
+    },
+    "Abbotsford-Mission": {
+        "url": "https://en.wikipedia.org/wiki/Abbotsford-Mission",
+        "title": "Abbotsford-Mission",
+        "summary": "Summary for Abbotsford-Mission."
     },
     "Boundary-Similkameen": {
-      "url": "https://en.wikipedia.org/wiki/Boundary-Similkameen",
-      "title": "Boundary-Similkameen",
-      "summary": "Summary for Boundary-Similkameen."
+        "url": "https://en.wikipedia.org/wiki/Boundary-Similkameen",
+        "title": "Boundary-Similkameen",
+        "summary": "Summary for Boundary-Similkameen."
     },
     "Bulkley Valley-Stikine": {
-      "url": "https://en.wikipedia.org/wiki/Bulkley_Valley-Stikine",
-      "title": "Bulkley Valley-Stikine",
-      "summary": "Summary for Bulkley Valley-Stikine."
+        "url": "https://en.wikipedia.org/wiki/Bulkley_Valley-Stikine",
+        "title": "Bulkley Valley-Stikine",
+        "summary": "Summary for Bulkley Valley-Stikine."
     },
     "Burnaby Centre": {
-      "url": "https://en.wikipedia.org/wiki/Burnaby_Centre",
-      "title": "Burnaby Centre",
-      "summary": "Summary for Burnaby Centre."
+        "url": "https://en.wikipedia.org/wiki/Burnaby_Centre",
+        "title": "Burnaby Centre",
+        "summary": "Summary for Burnaby Centre."
     },
     "Burnaby East": {
-      "url": "https://en.wikipedia.org/wiki/Burnaby_East",
-      "title": "Burnaby East",
-      "summary": "Summary for Burnaby East."
-    },
-    "Burnaby-New Westminster": {
-      "url": "https://en.wikipedia.org/wiki/Burnaby-New_Westminster_(provincial_electoral_district)",
-      "title": "Burnaby-New Westminster",
-      "summary": "Summary for Burnaby-New Westminster."
+        "url": "https://en.wikipedia.org/wiki/Burnaby_East",
+        "title": "Burnaby East",
+        "summary": "Summary for Burnaby East."
     },
     "Burnaby North": {
-      "url": "https://en.wikipedia.org/wiki/Burnaby_North",
-      "title": "Burnaby North",
-      "summary": "Summary for Burnaby North."
+        "url": "https://en.wikipedia.org/wiki/Burnaby_North",
+        "title": "Burnaby North",
+        "summary": "Summary for Burnaby North."
     },
     "Burnaby South-Metrotown": {
-      "url": "https://en.wikipedia.org/wiki/Burnaby_South-Metrotown",
-      "title": "Burnaby South-Metrotown",
-      "summary": "Summary for Burnaby South-Metrotown."
+        "url": "https://en.wikipedia.org/wiki/Burnaby_South-Metrotown",
+        "title": "Burnaby South-Metrotown",
+        "summary": "Summary for Burnaby South-Metrotown."
+    },
+    "Burnaby-New Westminster": {
+        "url": "https://en.wikipedia.org/wiki/Burnaby-New_Westminster_(provincial_electoral_district)",
+        "title": "Burnaby-New Westminster",
+        "summary": "Summary for Burnaby-New Westminster."
     },
     "Cariboo-Chilcotin": {
-      "url": "https://en.wikipedia.org/wiki/Cariboo-Chilcotin_(provincial_electoral_district)",
-      "title": "Cariboo-Chilcotin",
-      "summary": "Summary for Cariboo-Chilcotin."
-    },
-    "Vancouver-Hastings": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Hastings",
-      "title": "Vancouver-Hastings",
-      "summary": "Summary for Vancouver-Hastings."
-    },
-    "Vancouver-Kensington": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Kensington",
-      "title": "Vancouver-Kensington",
-      "summary": "Summary for Vancouver-Kensington."
-    },
-    "Vancouver-Langara": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Langara",
-      "title": "Vancouver-Langara",
-      "summary": "Summary for Vancouver-Langara."
-    },
-    "Vancouver-Little Mountain": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Little_Mountain",
-      "title": "Vancouver-Little Mountain",
-      "summary": "Summary for Vancouver-Little Mountain."
-    },
-    "Vancouver-Point Grey": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Point_Grey",
-      "title": "Vancouver-Point Grey",
-      "summary": "Summary for Vancouver-Point Grey."
-    },
-    "Vancouver-Quilchena": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Quilchena",
-      "title": "Vancouver-Quilchena",
-      "summary": "Summary for Vancouver-Quilchena."
-    },
-    "Vancouver-Renfrew": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Renfrew",
-      "title": "Vancouver-Renfrew",
-      "summary": "Summary for Vancouver-Renfrew."
-    },
-    "Vancouver-South Granville": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-South_Granville",
-      "title": "Vancouver-South Granville",
-      "summary": "Summary for Vancouver-South Granville."
-    },
-    "Vancouver-Strathcona": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Strathcona",
-      "title": "Vancouver-Strathcona",
-      "summary": "Summary for Vancouver-Strathcona."
-    },
-    "Vancouver-West End": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-West_End",
-      "title": "Vancouver-West End",
-      "summary": "Summary for Vancouver-West End."
-    },
-    "Vancouver-Yaletown": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Yaletown",
-      "title": "Vancouver-Yaletown",
-      "summary": "Summary for Vancouver-Yaletown."
-    },
-    "Vernon-Lumby": {
-      "url": "https://en.wikipedia.org/wiki/Vernon-Lumby",
-      "title": "Vernon-Lumby",
-      "summary": "Summary for Vernon-Lumby."
-    },
-    "Victoria-Beacon Hill": {
-      "url": "https://en.wikipedia.org/wiki/Victoria-Beacon_Hill",
-      "title": "Victoria-Beacon Hill",
-      "summary": "Summary for Victoria-Beacon Hill."
-    },
-    "Victoria-Swan Lake": {
-      "url": "https://en.wikipedia.org/wiki/Victoria-Swan_Lake",
-      "title": "Victoria-Swan Lake",
-      "summary": "Summary for Victoria-Swan Lake."
-    },
-    "West Kelowna-Peachland": {
-      "url": "https://en.wikipedia.org/wiki/West_Kelowna-Peachland",
-      "title": "West Kelowna-Peachland",
-      "summary": "Summary for West Kelowna-Peachland."
-    },
-    "West Vancouver-Capilano": {
-      "url": "https://en.wikipedia.org/wiki/West_Vancouver-Capilano",
-      "title": "West Vancouver-Capilano",
-      "summary": "Summary for West Vancouver-Capilano."
-    },
-    "West Vancouver-Sea to Sky": {
-      "url": "https://en.wikipedia.org/wiki/West_Vancouver-Sea_to_Sky",
-      "title": "West Vancouver-Sea to Sky",
-      "summary": "Summary for West Vancouver-Sea to Sky."
-    },
-    "Chilliwack-Cultus Lake": {
-      "url": "https://en.wikipedia.org/wiki/Chilliwack-Cultus_Lake",
-      "title": "Chilliwack-Cultus Lake",
-      "summary": "Summary for Chilliwack-Cultus Lake."
+        "url": "https://en.wikipedia.org/wiki/Cariboo-Chilcotin_(provincial_electoral_district)",
+        "title": "Cariboo-Chilcotin",
+        "summary": "Summary for Cariboo-Chilcotin."
     },
     "Chilliwack North": {
-      "url": "https://en.wikipedia.org/wiki/Chilliwack_North",
-      "title": "Chilliwack North",
-      "summary": "Summary for Chilliwack North."
+        "url": "https://en.wikipedia.org/wiki/Chilliwack_North",
+        "title": "Chilliwack North",
+        "summary": "Summary for Chilliwack North."
+    },
+    "Chilliwack-Cultus Lake": {
+        "url": "https://en.wikipedia.org/wiki/Chilliwack-Cultus_Lake",
+        "title": "Chilliwack-Cultus Lake",
+        "summary": "Summary for Chilliwack-Cultus Lake."
     },
     "Columbia River-Revelstoke": {
-      "url": "https://en.wikipedia.org/wiki/Columbia_River-Revelstoke",
-      "title": "Columbia River-Revelstoke",
-      "summary": "Summary for Columbia River-Revelstoke."
+        "url": "https://en.wikipedia.org/wiki/Columbia_River-Revelstoke",
+        "title": "Columbia River-Revelstoke",
+        "summary": "Summary for Columbia River-Revelstoke."
     },
     "Coquitlam-Burke Mountain": {
-      "url": "https://en.wikipedia.org/wiki/Coquitlam-Burke_Mountain",
-      "title": "Coquitlam-Burke Mountain",
-      "summary": "Summary for Coquitlam-Burke Mountain."
+        "url": "https://en.wikipedia.org/wiki/Coquitlam-Burke_Mountain",
+        "title": "Coquitlam-Burke Mountain",
+        "summary": "    <p>There are three candidates running:</p>\n    <ul>\n        <li><strong>Jodie Wickens</strong> (BC NDP) \u2013 She was an MLA before and wants to make homes cheaper and improve healthcare. <a href=\"https://www.tricitieschamber.com/2024/09/17/meet-the-candidates-jodie-wickens-coquitlam-burke-mountain-bc-ndp/\">Read more</a>.</li>\n        <li><strong>Stephen Frolek</strong> (BC Conservative Party) \u2013 He has helped youth in his church and served in the army. <a href=\"https://tricitiesdispatch.com/tri-cities-candidates-election-2024/\">Read more</a>.</li>\n        <li><strong>Lucas Janusz</strong> (BC Green Party) \u2013 He wants to protect the environment and stop climate change. <a href=\"https://www.tricitynews.com/local-news/green-party-candidate-named-for-coquitlamburke-mountain-9538624\">Read more</a>.</li>\n    </ul>\n    <p>Some big issues for this election are:</p>\n    <ul>\n        <li>Housing: Making homes more affordable.</li>\n        <li>Healthcare: Getting faster and better care for people.</li>\n        <li>Cost of Living: Making life cheaper, like childcare and transportation.</li>\n        <li>Transportation: Improving public transit and roads.</li>\n        <li>Environment: Protecting nature and fighting climate change.</li>\n    </ul>\n    <p>The current MLA, <strong>Fin Donnelly</strong>, is not running again, so this is an open race. This means it might be more competitive!</p>"
     },
     "Coquitlam-Maillardville": {
-      "url": "https://en.wikipedia.org/wiki/Coquitlam-Maillardville",
-      "title": "Coquitlam-Maillardville",
-      "summary": "Summary for Coquitlam-Maillardville."
+        "url": "https://en.wikipedia.org/wiki/Coquitlam-Maillardville",
+        "title": "Coquitlam-Maillardville",
+        "summary": "Summary for Coquitlam-Maillardville."
     },
     "Courtenay-Comox": {
-      "url": "https://en.wikipedia.org/wiki/Courtenay-Comox",
-      "title": "Courtenay-Comox",
-      "summary": "Summary for Courtenay-Comox."
+        "url": "https://en.wikipedia.org/wiki/Courtenay-Comox",
+        "title": "Courtenay-Comox",
+        "summary": "Summary for Courtenay-Comox."
     },
     "Cowichan Valley": {
-      "url": "https://en.wikipedia.org/wiki/Cowichan_Valley_(electoral_district)",
-      "title": "Cowichan Valley",
-      "summary": "Summary for Cowichan Valley."
+        "url": "https://en.wikipedia.org/wiki/Cowichan_Valley_(electoral_district)",
+        "title": "Cowichan Valley",
+        "summary": "Summary for Cowichan Valley."
     },
     "Delta North": {
-      "url": "https://en.wikipedia.org/wiki/Delta_North",
-      "title": "Delta North",
-      "summary": "Summary for Delta North."
+        "url": "https://en.wikipedia.org/wiki/Delta_North",
+        "title": "Delta North",
+        "summary": "Summary for Delta North."
     },
     "Delta South": {
-      "url": "https://en.wikipedia.org/wiki/Delta_South",
-      "title": "Delta South",
-      "summary": "Summary for Delta South."
+        "url": "https://en.wikipedia.org/wiki/Delta_South",
+        "title": "Delta South",
+        "summary": "Summary for Delta South."
     },
     "Esquimalt-Colwood": {
-      "url": "https://en.wikipedia.org/wiki/Esquimalt-Colwood",
-      "title": "Esquimalt-Colwood",
-      "summary": "Summary for Esquimalt-Colwood."
+        "url": "https://en.wikipedia.org/wiki/Esquimalt-Colwood",
+        "title": "Esquimalt-Colwood",
+        "summary": "Summary for Esquimalt-Colwood."
     },
     "Fraser-Nicola": {
-      "url": "https://en.wikipedia.org/wiki/Fraser-Nicola",
-      "title": "Fraser-Nicola",
-      "summary": "Summary for Fraser-Nicola."
+        "url": "https://en.wikipedia.org/wiki/Fraser-Nicola",
+        "title": "Fraser-Nicola",
+        "summary": "Summary for Fraser-Nicola."
     },
     "Juan de Fuca-Malahat": {
-      "url": "https://en.wikipedia.org/wiki/Juan_de_Fuca-Malahat",
-      "title": "Juan de Fuca-Malahat",
-      "summary": "Summary for Juan de Fuca-Malahat."
+        "url": "https://en.wikipedia.org/wiki/Juan_de_Fuca-Malahat",
+        "title": "Juan de Fuca-Malahat",
+        "summary": "Summary for Juan de Fuca-Malahat."
     },
     "Kamloops Centre": {
-      "url": "https://en.wikipedia.org/wiki/Kamloops_Centre",
-      "title": "Kamloops Centre",
-      "summary": "Summary for Kamloops Centre."
+        "url": "https://en.wikipedia.org/wiki/Kamloops_Centre",
+        "title": "Kamloops Centre",
+        "summary": "Summary for Kamloops Centre."
     },
     "Kamloops-North Thompson": {
-      "url": "https://en.wikipedia.org/wiki/Kamloops-North_Thompson",
-      "title": "Kamloops-North Thompson",
-      "summary": "Summary for Kamloops-North Thompson."
+        "url": "https://en.wikipedia.org/wiki/Kamloops-North_Thompson",
+        "title": "Kamloops-North Thompson",
+        "summary": "Summary for Kamloops-North Thompson."
     },
     "Kelowna Centre": {
-      "url": "https://en.wikipedia.org/wiki/Kelowna_Centre",
-      "title": "Kelowna Centre",
-      "summary": "Summary for Kelowna Centre."
+        "url": "https://en.wikipedia.org/wiki/Kelowna_Centre",
+        "title": "Kelowna Centre",
+        "summary": "Summary for Kelowna Centre."
     },
     "Kelowna-Lake Country-Coldstream": {
-      "url": "https://en.wikipedia.org/wiki/Kelowna-Lake_Country-Coldstream",
-      "title": "Kelowna-Lake Country-Coldstream",
-      "summary": "Summary for Kelowna-Lake Country-Coldstream."
+        "url": "https://en.wikipedia.org/wiki/Kelowna-Lake_Country-Coldstream",
+        "title": "Kelowna-Lake Country-Coldstream",
+        "summary": "Summary for Kelowna-Lake Country-Coldstream."
     },
     "Kelowna-Mission": {
-      "url": "https://en.wikipedia.org/wiki/Kelowna-Mission",
-      "title": "Kelowna-Mission",
-      "summary": "Summary for Kelowna-Mission."
+        "url": "https://en.wikipedia.org/wiki/Kelowna-Mission",
+        "title": "Kelowna-Mission",
+        "summary": "Summary for Kelowna-Mission."
     },
     "Kootenay Central": {
-      "url": "https://en.wikipedia.org/wiki/Kootenay_Central",
-      "title": "Kootenay Central",
-      "summary": "Summary for Kootenay Central."
+        "url": "https://en.wikipedia.org/wiki/Kootenay_Central",
+        "title": "Kootenay Central",
+        "summary": "Summary for Kootenay Central."
     },
     "Kootenay-Monashee": {
-      "url": "https://en.wikipedia.org/wiki/Kootenay-Monashee",
-      "title": "Kootenay-Monashee",
-      "summary": "Summary for Kootenay-Monashee."
+        "url": "https://en.wikipedia.org/wiki/Kootenay-Monashee",
+        "title": "Kootenay-Monashee",
+        "summary": "Summary for Kootenay-Monashee."
     },
     "Kootenay-Rockies": {
-      "url": "https://en.wikipedia.org/wiki/Kootenay-Rockies",
-      "title": "Kootenay-Rockies",
-      "summary": "Summary for Kootenay-Rockies."
+        "url": "https://en.wikipedia.org/wiki/Kootenay-Rockies",
+        "title": "Kootenay-Rockies",
+        "summary": "Summary for Kootenay-Rockies."
     },
     "Ladysmith-Oceanside": {
-      "url": "https://en.wikipedia.org/wiki/Ladysmith-Oceanside",
-      "title": "Ladysmith-Oceanside",
-      "summary": "Summary for Ladysmith-Oceanside."
+        "url": "https://en.wikipedia.org/wiki/Ladysmith-Oceanside",
+        "title": "Ladysmith-Oceanside",
+        "summary": "Summary for Ladysmith-Oceanside."
     },
     "Langford-Highlands": {
-      "url": "https://en.wikipedia.org/wiki/Langford-Highlands",
-      "title": "Langford-Highlands",
-      "summary": "Summary for Langford-Highlands."
+        "url": "https://en.wikipedia.org/wiki/Langford-Highlands",
+        "title": "Langford-Highlands",
+        "summary": "Summary for Langford-Highlands."
     },
     "Langley-Abbotsford": {
-      "url": "https://en.wikipedia.org/wiki/Langley-Abbotsford_(provincial_electoral_district)",
-      "title": "Langley-Abbotsford",
-      "summary": "Summary for Langley-Abbotsford."
+        "url": "https://en.wikipedia.org/wiki/Langley-Abbotsford_(provincial_electoral_district)",
+        "title": "Langley-Abbotsford",
+        "summary": "Summary for Langley-Abbotsford."
     },
     "Langley-Walnut Grove": {
-      "url": "https://en.wikipedia.org/wiki/Langley-Walnut_Grove",
-      "title": "Langley-Walnut Grove",
-      "summary": "Summary for Langley-Walnut Grove."
+        "url": "https://en.wikipedia.org/wiki/Langley-Walnut_Grove",
+        "title": "Langley-Walnut Grove",
+        "summary": "Summary for Langley-Walnut Grove."
     },
     "Langley-Willowbrook": {
-      "url": "https://en.wikipedia.org/wiki/Langley-Willowbrook",
-      "title": "Langley-Willowbrook",
-      "summary": "Summary for Langley-Willowbrook."
+        "url": "https://en.wikipedia.org/wiki/Langley-Willowbrook",
+        "title": "Langley-Willowbrook",
+        "summary": "Summary for Langley-Willowbrook."
     },
     "Maple Ridge East": {
-      "url": "https://en.wikipedia.org/wiki/Maple_Ridge_East",
-      "title": "Maple Ridge East",
-      "summary": "Summary for Maple Ridge East."
+        "url": "https://en.wikipedia.org/wiki/Maple_Ridge_East",
+        "title": "Maple Ridge East",
+        "summary": "Summary for Maple Ridge East."
     },
     "Maple Ridge-Pitt Meadows": {
-      "url": "https://en.wikipedia.org/wiki/Maple_Ridge-Pitt_Meadows",
-      "title": "Maple Ridge-Pitt Meadows",
-      "summary": "Summary for Maple Ridge-Pitt Meadows."
+        "url": "https://en.wikipedia.org/wiki/Maple_Ridge-Pitt_Meadows",
+        "title": "Maple Ridge-Pitt Meadows",
+        "summary": "Summary for Maple Ridge-Pitt Meadows."
     },
     "Mid Island-Pacific Rim": {
-      "url": "https://en.wikipedia.org/wiki/Mid_Island-Pacific_Rim",
-      "title": "Mid Island-Pacific Rim",
-      "summary": "Summary for Mid Island-Pacific Rim."
+        "url": "https://en.wikipedia.org/wiki/Mid_Island-Pacific_Rim",
+        "title": "Mid Island-Pacific Rim",
+        "summary": "Summary for Mid Island-Pacific Rim."
     },
     "Nanaimo-Gabriola Island": {
-      "url": "https://en.wikipedia.org/wiki/Nanaimo-Gabriola_Island",
-      "title": "Nanaimo-Gabriola Island",
-      "summary": "Summary for Nanaimo-Gabriola Island."
+        "url": "https://en.wikipedia.org/wiki/Nanaimo-Gabriola_Island",
+        "title": "Nanaimo-Gabriola Island",
+        "summary": "Summary for Nanaimo-Gabriola Island."
     },
     "Nanaimo-Lantzville": {
-      "url": "https://en.wikipedia.org/wiki/Nanaimo-Lantzville",
-      "title": "Nanaimo-Lantzville",
-      "summary": "Summary for Nanaimo-Lantzville."
+        "url": "https://en.wikipedia.org/wiki/Nanaimo-Lantzville",
+        "title": "Nanaimo-Lantzville",
+        "summary": "Summary for Nanaimo-Lantzville."
     },
     "Nechako Lakes": {
-      "url": "https://en.wikipedia.org/wiki/Nechako_Lakes_(provincial_electoral_district)",
-      "title": "Nechako Lakes",
-      "summary": "Summary for Nechako Lakes."
+        "url": "https://en.wikipedia.org/wiki/Nechako_Lakes_(provincial_electoral_district)",
+        "title": "Nechako Lakes",
+        "summary": "Summary for Nechako Lakes."
     },
     "New Westminster-Coquitlam": {
-      "url": "https://en.wikipedia.org/wiki/New_Westminster-Coquitlam_(provincial_electoral_district)",
-      "title": "New Westminster-Coquitlam",
-      "summary": "Summary for New Westminster-Coquitlam."
+        "url": "https://en.wikipedia.org/wiki/New_Westminster-Coquitlam_(provincial_electoral_district)",
+        "title": "New Westminster-Coquitlam",
+        "summary": "Summary for New Westminster-Coquitlam."
     },
     "North Coast-Haida Gwaii": {
-      "url": "https://en.wikipedia.org/wiki/North_Coast-Haida_Gwaii",
-      "title": "North Coast-Haida Gwaii",
-      "summary": "Summary for North Coast-Haida Gwaii."
+        "url": "https://en.wikipedia.org/wiki/North_Coast-Haida_Gwaii",
+        "title": "North Coast-Haida Gwaii",
+        "summary": "Summary for North Coast-Haida Gwaii."
     },
     "North Island": {
-      "url": "https://en.wikipedia.org/wiki/North_Island_(provincial_electoral_district)",
-      "title": "North Island",
-      "summary": "Summary for North Island."
+        "url": "https://en.wikipedia.org/wiki/North_Island_(provincial_electoral_district)",
+        "title": "North Island",
+        "summary": "Summary for North Island."
     },
     "North Vancouver-Lonsdale": {
-      "url": "https://en.wikipedia.org/wiki/North_Vancouver-Lonsdale",
-      "title": "North Vancouver-Lonsdale",
-      "summary": "Summary for North Vancouver-Lonsdale."
+        "url": "https://en.wikipedia.org/wiki/North_Vancouver-Lonsdale",
+        "title": "North Vancouver-Lonsdale",
+        "summary": "Summary for North Vancouver-Lonsdale."
     },
     "North Vancouver-Seymour": {
-      "url": "https://en.wikipedia.org/wiki/North_Vancouver-Seymour",
-      "title": "North Vancouver-Seymour",
-      "summary": "Summary for North Vancouver-Seymour."
+        "url": "https://en.wikipedia.org/wiki/North_Vancouver-Seymour",
+        "title": "North Vancouver-Seymour",
+        "summary": "Summary for North Vancouver-Seymour."
     },
     "Oak Bay-Gordon Head": {
-      "url": "https://en.wikipedia.org/wiki/Oak_Bay-Gordon_Head",
-      "title": "Oak Bay-Gordon Head",
-      "summary": "Summary for Oak Bay-Gordon Head."
+        "url": "https://en.wikipedia.org/wiki/Oak_Bay-Gordon_Head",
+        "title": "Oak Bay-Gordon Head",
+        "summary": "Summary for Oak Bay-Gordon Head."
     },
     "Peace River North": {
-      "url": "https://en.wikipedia.org/wiki/Peace_River_North",
-      "title": "Peace River North",
-      "summary": "Summary for Peace River North."
+        "url": "https://en.wikipedia.org/wiki/Peace_River_North",
+        "title": "Peace River North",
+        "summary": "Summary for Peace River North."
     },
     "Peace River South": {
-      "url": "https://en.wikipedia.org/wiki/Peace_River_South",
-      "title": "Peace River South",
-      "summary": "Summary for Peace River South."
+        "url": "https://en.wikipedia.org/wiki/Peace_River_South",
+        "title": "Peace River South",
+        "summary": "Summary for Peace River South."
     },
     "Penticton-Summerland": {
-      "url": "https://en.wikipedia.org/wiki/Penticton-Summerland",
-      "title": "Penticton-Summerland",
-      "summary": "Summary for Penticton-Summerland."
+        "url": "https://en.wikipedia.org/wiki/Penticton-Summerland",
+        "title": "Penticton-Summerland",
+        "summary": "Summary for Penticton-Summerland."
     },
     "Port Coquitlam": {
-      "url": "https://en.wikipedia.org/wiki/Port_Coquitlam_(provincial_electoral_district)",
-      "title": "Port Coquitlam",
-      "summary": "Summary for Port Coquitlam."
+        "url": "https://en.wikipedia.org/wiki/Port_Coquitlam_(provincial_electoral_district)",
+        "title": "Port Coquitlam",
+        "summary": "Summary for Port Coquitlam."
     },
     "Port Moody-Burquitlam": {
-      "url": "https://en.wikipedia.org/wiki/Port_Moody-Burquitlam",
-      "title": "Port Moody-Burquitlam",
-      "summary": "Summary for Port Moody-Burquitlam."
+        "url": "https://en.wikipedia.org/wiki/Port_Moody-Burquitlam",
+        "title": "Port Moody-Burquitlam",
+        "summary": "Summary for Port Moody-Burquitlam."
     },
     "Powell River-Sunshine Coast": {
-      "url": "https://en.wikipedia.org/wiki/Powell_River-Sunshine_Coast",
-      "title": "Powell River-Sunshine Coast",
-      "summary": "Summary for Powell River-Sunshine Coast."
+        "url": "https://en.wikipedia.org/wiki/Powell_River-Sunshine_Coast",
+        "title": "Powell River-Sunshine Coast",
+        "summary": "Summary for Powell River-Sunshine Coast."
     },
     "Prince George-Mackenzie": {
-      "url": "https://en.wikipedia.org/wiki/Prince_George-Mackenzie",
-      "title": "Prince George-Mackenzie",
-      "summary": "Summary for Prince George-Mackenzie."
+        "url": "https://en.wikipedia.org/wiki/Prince_George-Mackenzie",
+        "title": "Prince George-Mackenzie",
+        "summary": "Summary for Prince George-Mackenzie."
     },
     "Prince George-North Cariboo": {
-      "url": "https://en.wikipedia.org/wiki/Prince_George-North_Cariboo",
-      "title": "Prince George-North Cariboo",
-      "summary": "Summary for Prince George-North Cariboo."
+        "url": "https://en.wikipedia.org/wiki/Prince_George-North_Cariboo",
+        "title": "Prince George-North Cariboo",
+        "summary": "Summary for Prince George-North Cariboo."
     },
     "Prince George-Valemount": {
-      "url": "https://en.wikipedia.org/wiki/Prince_George-Valemount",
-      "title": "Prince George-Valemount",
-      "summary": "Summary for Prince George-Valemount."
-    },
-    "Richmond-Bridgeport": {
-      "url": "https://en.wikipedia.org/wiki/Richmond-Bridgeport",
-      "title": "Richmond-Bridgeport",
-      "summary": "Summary for Richmond-Bridgeport."
+        "url": "https://en.wikipedia.org/wiki/Prince_George-Valemount",
+        "title": "Prince George-Valemount",
+        "summary": "Summary for Prince George-Valemount."
     },
     "Richmond Centre": {
-      "url": "https://en.wikipedia.org/wiki/Richmond_Centre_(provincial_electoral_district)",
-      "title": "Richmond Centre",
-      "summary": "Summary for Richmond Centre."
+        "url": "https://en.wikipedia.org/wiki/Richmond_Centre_(provincial_electoral_district)",
+        "title": "Richmond Centre",
+        "summary": "Summary for Richmond Centre."
+    },
+    "Richmond-Bridgeport": {
+        "url": "https://en.wikipedia.org/wiki/Richmond-Bridgeport",
+        "title": "Richmond-Bridgeport",
+        "summary": "Summary for Richmond-Bridgeport."
     },
     "Richmond-Queensborough": {
-      "url": "https://en.wikipedia.org/wiki/Richmond-Queensborough",
-      "title": "Richmond-Queensborough",
-      "summary": "Summary for Richmond-Queensborough."
+        "url": "https://en.wikipedia.org/wiki/Richmond-Queensborough",
+        "title": "Richmond-Queensborough",
+        "summary": "Summary for Richmond-Queensborough."
     },
     "Richmond-Steveston": {
-      "url": "https://en.wikipedia.org/wiki/Richmond-Steveston",
-      "title": "Richmond-Steveston",
-      "summary": "Summary for Richmond-Steveston."
+        "url": "https://en.wikipedia.org/wiki/Richmond-Steveston",
+        "title": "Richmond-Steveston",
+        "summary": "Summary for Richmond-Steveston."
     },
     "Saanich North and the Islands": {
-      "url": "https://en.wikipedia.org/wiki/Saanich_North_and_the_Islands",
-      "title": "Saanich North and the Islands",
-      "summary": "Summary for Saanich North and the Islands."
+        "url": "https://en.wikipedia.org/wiki/Saanich_North_and_the_Islands",
+        "title": "Saanich North and the Islands",
+        "summary": "Summary for Saanich North and the Islands."
     },
     "Saanich South": {
-      "url": "https://en.wikipedia.org/wiki/Saanich_South",
-      "title": "Saanich South",
-      "summary": "Summary for Saanich South."
+        "url": "https://en.wikipedia.org/wiki/Saanich_South",
+        "title": "Saanich South",
+        "summary": "Summary for Saanich South."
     },
     "Salmon Arm-Shuswap": {
-      "url": "https://en.wikipedia.org/wiki/Salmon_Arm-Shuswap",
-      "title": "Salmon Arm-Shuswap",
-      "summary": "Summary for Salmon Arm-Shuswap."
+        "url": "https://en.wikipedia.org/wiki/Salmon_Arm-Shuswap",
+        "title": "Salmon Arm-Shuswap",
+        "summary": "Summary for Salmon Arm-Shuswap."
     },
     "Skeena": {
-      "url": "https://en.wikipedia.org/wiki/Skeena_(provincial_electoral_district)",
-      "title": "Skeena",
-      "summary": "Summary for Skeena."
+        "url": "https://en.wikipedia.org/wiki/Skeena_(provincial_electoral_district)",
+        "title": "Skeena",
+        "summary": "Summary for Skeena."
     },
     "Surrey City Centre": {
-      "url": "https://en.wikipedia.org/wiki/Surrey_City_Centre",
-      "title": "Surrey City Centre",
-      "summary": "Summary for Surrey City Centre."
-    },
-    "Surrey-Cloverdale": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-Cloverdale",
-      "title": "Surrey-Cloverdale",
-      "summary": "Summary for Surrey-Cloverdale."
-    },
-    "Surrey-Fleetwood": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-Fleetwood",
-      "title": "Surrey-Fleetwood",
-      "summary": "Summary for Surrey-Fleetwood."
-    },
-    "Surrey-Guildford": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-Guildford",
-      "title": "Surrey-Guildford",
-      "summary": "Summary for Surrey-Guildford."
-    },
-    "Surrey-Newton": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-Newton_(provincial_electoral_district)",
-      "title": "Surrey-Newton",
-      "summary": "Summary for Surrey-Newton."
+        "url": "https://en.wikipedia.org/wiki/Surrey_City_Centre",
+        "title": "Surrey City Centre",
+        "summary": "Summary for Surrey City Centre."
     },
     "Surrey North": {
-      "url": "https://en.wikipedia.org/wiki/Surrey_North_(provincial_electoral_district)",
-      "title": "Surrey North",
-      "summary": "Summary for Surrey North."
-    },
-    "Surrey-Panorama": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-Panorama",
-      "title": "Surrey-Panorama",
-      "summary": "Summary for Surrey-Panorama."
-    },
-    "Surrey-Serpentine River": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-Serpentine_River",
-      "title": "Surrey-Serpentine River",
-      "summary": "Summary for Surrey-Serpentine River."
+        "url": "https://en.wikipedia.org/wiki/Surrey_North_(provincial_electoral_district)",
+        "title": "Surrey North",
+        "summary": "Summary for Surrey North."
     },
     "Surrey South": {
-      "url": "https://en.wikipedia.org/wiki/Surrey_South",
-      "title": "Surrey South",
-      "summary": "Summary for Surrey South."
+        "url": "https://en.wikipedia.org/wiki/Surrey_South",
+        "title": "Surrey South",
+        "summary": "Summary for Surrey South."
+    },
+    "Surrey-Cloverdale": {
+        "url": "https://en.wikipedia.org/wiki/Surrey-Cloverdale",
+        "title": "Surrey-Cloverdale",
+        "summary": "Summary for Surrey-Cloverdale."
+    },
+    "Surrey-Fleetwood": {
+        "url": "https://en.wikipedia.org/wiki/Surrey-Fleetwood",
+        "title": "Surrey-Fleetwood",
+        "summary": "Summary for Surrey-Fleetwood."
+    },
+    "Surrey-Guildford": {
+        "url": "https://en.wikipedia.org/wiki/Surrey-Guildford",
+        "title": "Surrey-Guildford",
+        "summary": "Summary for Surrey-Guildford."
+    },
+    "Surrey-Newton": {
+        "url": "https://en.wikipedia.org/wiki/Surrey-Newton_(provincial_electoral_district)",
+        "title": "Surrey-Newton",
+        "summary": "Summary for Surrey-Newton."
+    },
+    "Surrey-Panorama": {
+        "url": "https://en.wikipedia.org/wiki/Surrey-Panorama",
+        "title": "Surrey-Panorama",
+        "summary": "Summary for Surrey-Panorama."
+    },
+    "Surrey-Serpentine River": {
+        "url": "https://en.wikipedia.org/wiki/Surrey-Serpentine_River",
+        "title": "Surrey-Serpentine River",
+        "summary": "Summary for Surrey-Serpentine River."
     },
     "Surrey-White Rock": {
-      "url": "https://en.wikipedia.org/wiki/Surrey-White_Rock",
-      "title": "Surrey-White Rock",
-      "summary": "Summary for Surrey-White Rock."
+        "url": "https://en.wikipedia.org/wiki/Surrey-White_Rock",
+        "title": "Surrey-White Rock",
+        "summary": "Summary for Surrey-White Rock."
     },
     "Vancouver-Fraserview": {
-      "url": "https://en.wikipedia.org/wiki/Vancouver-Fraserview",
-      "title": "Vancouver-Fraserview",
-      "summary": "Summary for Vancouver-Fraserview."
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Fraserview",
+        "title": "Vancouver-Fraserview",
+        "summary": "Summary for Vancouver-Fraserview."
+    },
+    "Vancouver-Hastings": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Hastings",
+        "title": "Vancouver-Hastings",
+        "summary": "Summary for Vancouver-Hastings."
+    },
+    "Vancouver-Kensington": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Kensington",
+        "title": "Vancouver-Kensington",
+        "summary": "Summary for Vancouver-Kensington."
+    },
+    "Vancouver-Langara": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Langara",
+        "title": "Vancouver-Langara",
+        "summary": "Summary for Vancouver-Langara."
+    },
+    "Vancouver-Little Mountain": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Little_Mountain",
+        "title": "Vancouver-Little Mountain",
+        "summary": "Summary for Vancouver-Little Mountain."
+    },
+    "Vancouver-Point Grey": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Point_Grey",
+        "title": "Vancouver-Point Grey",
+        "summary": "Summary for Vancouver-Point Grey."
+    },
+    "Vancouver-Quilchena": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Quilchena",
+        "title": "Vancouver-Quilchena",
+        "summary": "Summary for Vancouver-Quilchena."
+    },
+    "Vancouver-Renfrew": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Renfrew",
+        "title": "Vancouver-Renfrew",
+        "summary": "Summary for Vancouver-Renfrew."
+    },
+    "Vancouver-South Granville": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-South_Granville",
+        "title": "Vancouver-South Granville",
+        "summary": "Summary for Vancouver-South Granville."
+    },
+    "Vancouver-Strathcona": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Strathcona",
+        "title": "Vancouver-Strathcona",
+        "summary": "Summary for Vancouver-Strathcona."
+    },
+    "Vancouver-West End": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-West_End",
+        "title": "Vancouver-West End",
+        "summary": "Summary for Vancouver-West End."
+    },
+    "Vancouver-Yaletown": {
+        "url": "https://en.wikipedia.org/wiki/Vancouver-Yaletown",
+        "title": "Vancouver-Yaletown",
+        "summary": "Summary for Vancouver-Yaletown."
+    },
+    "Vernon-Lumby": {
+        "url": "https://en.wikipedia.org/wiki/Vernon-Lumby",
+        "title": "Vernon-Lumby",
+        "summary": "Summary for Vernon-Lumby."
+    },
+    "Victoria-Beacon Hill": {
+        "url": "https://en.wikipedia.org/wiki/Victoria-Beacon_Hill",
+        "title": "Victoria-Beacon Hill",
+        "summary": "Summary for Victoria-Beacon Hill."
+    },
+    "Victoria-Swan Lake": {
+        "url": "https://en.wikipedia.org/wiki/Victoria-Swan_Lake",
+        "title": "Victoria-Swan Lake",
+        "summary": "Summary for Victoria-Swan Lake."
+    },
+    "West Kelowna-Peachland": {
+        "url": "https://en.wikipedia.org/wiki/West_Kelowna-Peachland",
+        "title": "West Kelowna-Peachland",
+        "summary": "Summary for West Kelowna-Peachland."
+    },
+    "West Vancouver-Capilano": {
+        "url": "https://en.wikipedia.org/wiki/West_Vancouver-Capilano",
+        "title": "West Vancouver-Capilano",
+        "summary": "Summary for West Vancouver-Capilano."
+    },
+    "West Vancouver-Sea to Sky": {
+        "url": "https://en.wikipedia.org/wiki/West_Vancouver-Sea_to_Sky",
+        "title": "West Vancouver-Sea to Sky",
+        "summary": "Summary for West Vancouver-Sea to Sky."
     }
 }
