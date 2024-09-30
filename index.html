@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="version" content="0.0.1" />
+    <meta name="version" content="0.0.2" />
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="24bc.ca - Your 2024 BC Election. Visualized. Explore an interactive map with curated links." />
@@ -283,7 +283,7 @@
               .setPopup(
                 new mapboxgl.Popup({ closeOnMove: false })
                   .setMaxWidth("340px")
-                  .setHTML(`<h3>${marker.title}</h3><p>${marker.summary}</p><a href="${marker.url}" target="_blank">Learn More</a>`)
+                  .setHTML(`<h3>${marker.title}</h3>${marker.summary}`)
               )
               .addTo(map);
 

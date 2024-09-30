@@ -23,7 +23,6 @@ with open(csv_file, mode='r', newline='', encoding='utf-8') as file:
             'title': row['title'],
             'summary': row['summary'],
             'icon': row['icon'],
-            'url': row['url']
         })
 
 # Define the JSON output file
