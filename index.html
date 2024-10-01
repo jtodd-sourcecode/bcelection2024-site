@@ -137,35 +137,34 @@
     <div id="dropdown" class="dropdown hidden">
       <ul>
         <li>
-          <a href="https://www.instagram.com/24bc.ca/" target="_blank"><i class="fa fa-envelope fa-fw"></i>DM me for corrections and updates</a>
+          <a href="https://www.instagram.com/24bc.ca/" target="_blank"><i class="fa fa-envelope fa-fw"></i> DM me for corrections and updates</a>
         </li>
         <li>
-          <a href="https://en.wikipedia.org/wiki/2024_British_Columbia_general_election" target="_blank"
-            ><i class="fab fa-wikipedia-w fa-fw"></i>2024 BC General Election</a>
+          <a href="https://en.wikipedia.org/wiki/2024_British_Columbia_general_election" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i> 2024 BC General Election</a>
         </li>
         <li>
-          <a href="https://www.youtube.com/watch?v=_SVdQgax0Fg" target="_blank"><i class="fab fa-youtube fa-fw"></i>BC Election: Week 1 (YouTube)</a>
+          <a href="https://www.youtube.com/watch?v=_SVdQgax0Fg" target="_blank"><i class="fab fa-youtube fa-fw"></i> BC Election: Week 1 (YouTube)</a>
         </li>
         <li>
-          <a href="https://elections.bc.ca/" target="_blank"><i class="fas fa-vote-yea fa-fw"></i>Elections BC - Official Information</a>
+          <a href="https://elections.bc.ca/" target="_blank"><i class="fas fa-vote-yea fa-fw"></i> Elections BC - Official Information</a>
         </li>
         <li>
-          <a href="https://contributions.electionsbc.gov.bc.ca/pcs/SA1Search.aspx" target="_blank"><i class="fas fa-vote-yea fa-fw"></i>Donations to Political Parties</a>
+          <a href="https://contributions.electionsbc.gov.bc.ca/pcs/SA1Search.aspx" target="_blank"><i class="fas fa-vote-yea fa-fw"></i> Donations to Political Parties</a>
         </li>
         <li>
-          <a href="https://www.cbc.ca/news/canada/british-columbia" target="_blank"><i class="fas fa-newspaper fa-fw"></i>CBC News - BC Election Coverage</a>
+          <a href="https://www.cbc.ca/news/canada/british-columbia" target="_blank"><i class="fas fa-newspaper fa-fw"></i> CBC News - BC Election Coverage</a>
         </li>
         <li>
-          <a href="https://bc.ctvnews.ca/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>CTV News Vancouver - Election Coverage</a>
+          <a href="https://bc.ctvnews.ca/" target="_blank"><i class="fas fa-newspaper fa-fw"></i> CTV News Vancouver - Election Coverage</a>
         </li>
         <li>
-          <a href="https://thenarwhal.ca/topics/bc-election/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>The Narwhal - BC Election 2024</a>
+          <a href="https://thenarwhal.ca/topics/bc-election/" target="_blank"><i class="fas fa-newspaper fa-fw"></i> The Narwhal - BC Election 2024</a>
         </li>
         <li>
-          <a href="https://thetyee.ca/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>The Tyee - In-depth Election Coverage</a>
+          <a href="https://thetyee.ca/" target="_blank"><i class="fas fa-newspaper fa-fw"></i> The Tyee - In-depth Election Coverage</a>
         </li>
         <li>
-          <a href="https://cityhallwatch.wordpress.com/" target="_blank"><i class="fas fa-newspaper fa-fw"></i>CityHallWatch - Civic Affairs Blog</a>
+          <a href="https://cityhallwatch.wordpress.com/" target="_blank"><i class="fas fa-newspaper fa-fw"></i> CityHallWatch - Civic Affairs Blog</a>
         </li>
       </ul>
     </div>
@@ -280,11 +279,7 @@
             // Create a marker and add it to the map
             const markerInstance = new mapboxgl.Marker({ element: el })
               .setLngLat([marker.coordinates[1], marker.coordinates[0]])
-              .setPopup(
-                new mapboxgl.Popup({ closeOnMove: false })
-                  .setMaxWidth("340px")
-                  .setHTML(`<h3>${marker.title}</h3>${marker.summary}`)
-              )
+              .setPopup(new mapboxgl.Popup({ closeOnMove: false }).setMaxWidth("340px").setHTML(`<h3>${marker.title}</h3>${marker.summary}`))
               .addTo(map);
 
             // Prevent click event from propagating to the map's layers
