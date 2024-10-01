@@ -32,7 +32,6 @@ with open(csv_file, mode='r', newline='', encoding='utf-8') as file:
 
         # Create a dictionary for each row and append it to the json_data list
         json_data.append({
-            'address': row['address'],
             'coordinates': [geolong, geolat],
             'title': row['title'],
             'summary': row['summary'],
