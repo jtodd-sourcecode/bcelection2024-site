@@ -45,5 +45,5 @@ json_file = 'markers.json'
 with open(json_file, mode='w', encoding='utf-8') as file:
     json.dump(json_data, file, separators=(',', ':'))
 
-file_size = os.path.getsize(json_file) / 1024 # Get size in bytes
+file_size = os.path.getsize(json_file) / 1024 # Get size in kbytes
 print(f"{json_file} created! Size: {file_size:.2f} KB")

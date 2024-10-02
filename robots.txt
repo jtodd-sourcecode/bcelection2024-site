@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /index-rendered.html
+Sitemap: https://24bc.ca/sitemap.xml

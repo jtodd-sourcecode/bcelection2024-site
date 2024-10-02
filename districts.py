@@ -26,5 +26,5 @@ json_file_path = 'districts.json'  # Replace with desired output JSON file path
 with open(json_file_path, 'w') as json_file:
     json_file.write(json_data)
 
-file_size = os.path.getsize(json_file_path) / 1024 # Get size in bytes
+file_size = os.path.getsize(json_file_path) / 1024 # Get size in kbytes
 print(f"{json_file_path} created! Size: {file_size:.2f} KB")
