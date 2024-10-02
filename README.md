@@ -4,8 +4,7 @@
 This project is a web-based interactive map of British Columbia’s electoral districts, allowing users to click on each district and be redirected to a corresponding Perplexity page with more information about that district. The site was built using **Mapbox** and **Perplexity.ai**, and is hosted on **GitHub Pages**. 
 
 ## Key Features
-- **Interactive map**: Displays electoral districts of BC with clickable regions.
-- **Perplexity Integration**: Redirects users to Perplexity.ai Pages with information on each district.
+- **Interactive map**: Displays electoral districts of BC with clickable regions and markers.
 - **Hosted on GitHub Pages**: Easily deployable and scalable using GitHub’s free hosting.
 - **DNS Management**: Domain is managed through GoDaddy, with DNS pointing to GitHub Pages.
 
@@ -28,6 +27,7 @@ The 2023 electoral district boundaries were sourced from the **BC Data Catalogue
 - I created a custom style in Mapbox Studio, using the uploaded tileset to display the electoral districts.
 - The style was customized to show the district boundaries clearly, and I published it to make it available for my website.
 - I then integrated this style into my website using Mapbox GL JS.
+- I also generated a tile set using wildfire data that I got from the BC data catalogue
 
 ### Extracting District Names and Building the URL Mapping
 
